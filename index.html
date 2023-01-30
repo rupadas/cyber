@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSNetworkX images as nodes demo</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jsnetworkx.js"></script>
+    <script type="text/javascript" src="json-editor.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+  <div style="display: flex; justify-items: flex-start; flex-direction: row;">
+    <div style="display: flex; justify-content: flex-start; flex-direction: column; width: 50%;">
+      <p>Please pass Correct Json Data</p>
+      <json-editor id='editor1' indent="5" style="height: auto; min-height: 300px; width: 100%;" value='{
+        "root": [
+         "rootName",
+         {
+          "p1": [
+           "p1Name",
+           {
+            "sp2": [
+             1,
+             2
+            ],
+            "sp3": [
+             3,
+             4
+            ]
+           }
+          ]
+         },
+         {
+          "p2": {
+           "ln": [
+            5,
+            6
+           ],
+           "rn": "onlyChild"
+          }
+         }
+        ]
+}'></json-editor>
+      <button onclick="myFunction()">Genrate</button>
+      <p>Nodes result</p>
+      <textarea id="nodes" style="height: 200px; background: #000; display: block; color: white;"></textarea>
+      <p>Backward result</p>
+      <textarea id="backward" style="height: 50px; background: #000; display: block; color: brown;"></textarea>
+    </div>
+    <div id="canvas" style="display: flex; justify-content: flex-start; flex-direction: column; width: 50%;"></div>
+  </div>
+</body>
+</html>
